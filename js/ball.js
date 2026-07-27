@@ -16,6 +16,7 @@ function updateBall() {
   const { ball } = state;
   if ( ball.attached ) return;
   if ( state.phase !== 'playing' ) return;
+  if ( state.transitionRemainingMs > 0 ) return;
 
   ball.x += ball.vx;
   ball.y += ball.vy;

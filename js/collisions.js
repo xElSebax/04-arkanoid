@@ -58,6 +58,7 @@ function checkBlockCollisions() {
 
 function checkCollisions() {
   if ( state.ball.attached || state.phase !== 'playing' ) return;
+  if ( state.transitionRemainingMs > 0 ) return;
 
   checkPaddleCollision();
   checkBlockCollisions();

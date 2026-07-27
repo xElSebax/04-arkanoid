@@ -34,12 +34,18 @@ function resetBallOnPaddle() {
 
 function checkVictory() {
   if ( state.phase !== 'playing' ) return;
+  if ( state.transitionRemainingMs > 0 ) return;
 
   const anyAlive = state.blocks.some( ( block ) => block.alive );
-  if ( !anyAlive ) {
+  if ( anyAlive ) return;
+
+  state.ball.vx = 0;
+  state.ball.vy = 0;
+
+  if ( state.level < LEVEL_COUNT ) {
+    state.transitionRemainingMs = LEVEL_TRANSITION_MS;
+  } else {
     state.phase = 'victory';
-    state.ball.vx = 0;
-    state.ball.vy = 0;
   }
 }
 
@@ -65,6 +71,7 @@ function resetGame() {
 function checkBallLost() {
   const { ball } = state;
   if ( ball.attached || state.phase !== 'playing' ) return;
+  if ( state.transitionRemainingMs > 0 ) return;
   if ( ball.y <= CANVAS_HEIGHT ) return;
 
   state.lives -= 1;
