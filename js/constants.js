@@ -15,3 +15,7 @@ const PADDLE_BOTTOM_MARGIN = 30;
 const BLOCK_TOP_MARGIN = 40;
 
 const BLOCK_ROW_COLORS = [ 'red', 'yellow', 'cyan', 'magenta', 'hotpink', 'green' ];
+
+const LEVEL_COUNT = 5;
+const LEVEL_TRANSITION_MS = 1000;
+const LEVEL_SPEED_BONUS = 0.1;
