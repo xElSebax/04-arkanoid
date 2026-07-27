@@ -12,3 +12,6 @@ const PADDLE_H = 14;
 const BALL_SPEED = 5;
 const PADDLE_KEYBOARD_SPEED = 8;
 const PADDLE_BOTTOM_MARGIN = 30;
+const BLOCK_TOP_MARGIN = 40;
+
+const BLOCK_ROW_COLORS = [ 'red', 'yellow', 'cyan', 'magenta', 'hotpink', 'green' ];
