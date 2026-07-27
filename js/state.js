@@ -1,0 +1,41 @@
+const state = {
+  phase: 'ready',
+  score: 0,
+  lives: LIVES_START,
+  paddle: { x: 0, y: 0, w: PADDLE_W, h: PADDLE_H },
+  ball: {
+    x: 0,
+    y: 0,
+    w: BALL_SIZE,
+    h: BALL_SIZE,
+    vx: 0,
+    vy: 0,
+    attached: true,
+  },
+  blocks: [],
+};
+
+function updateBallAttachedPosition() {
+  const { paddle, ball } = state;
+  ball.x = paddle.x + ( paddle.w - ball.w ) / 2;
+  ball.y = paddle.y - ball.h;
+}
+
+function initState() {
+  state.phase = 'ready';
+  state.score = 0;
+  state.lives = LIVES_START;
+  state.blocks = [];
+
+  state.paddle.x = ( CANVAS_WIDTH - PADDLE_W ) / 2;
+  state.paddle.y = CANVAS_HEIGHT - PADDLE_H - PADDLE_BOTTOM_MARGIN;
+  state.paddle.w = PADDLE_W;
+  state.paddle.h = PADDLE_H;
+
+  state.ball.w = BALL_SIZE;
+  state.ball.h = BALL_SIZE;
+  state.ball.vx = 0;
+  state.ball.vy = 0;
+  state.ball.attached = true;
+  updateBallAttachedPosition();
+}
