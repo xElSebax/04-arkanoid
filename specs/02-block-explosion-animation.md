@@ -1,6 +1,6 @@
 # SPEC 02 — Animación de explosión al destruir bloques
 
-> **Estado:** Aprobado
+> **Estado:** Implementado
 > **Depende de:** SPEC 01
 > **Fecha:** 2026-07-27
 > **Objetivo:** Mostrar una animación sprite de explosión en la posición del bloque al destruirlo, reutilizando `EXPLOSION_FRAMES` de `spritesheet.js` sin cambiar la lógica de juego ni añadir sonido.
@@ -71,18 +71,18 @@ Módulo previsto:
 
 ## Criterios de aceptación
 
-- [ ] El juego carga sin errores en consola con el nuevo módulo `js/explosions.js`.
-- [ ] Al destruir un bloque, desaparece de inmediato (sin colisión ni render del bloque).
-- [ ] Al destruir un bloque, aparece una animación de explosión en la misma posición y tamaño del bloque.
-- [ ] El color de la explosión coincide con el color del bloque destruido (usa `EXPLOSION_FRAMES[color]`).
-- [ ] La animación muestra 4 frames en ~150 ms (`EXPLOSION_DURATION`) y luego desaparece.
-- [ ] Cada bloque destruido sigue sumando 10 puntos en el mismo frame del impacto.
-- [ ] Al destruir el último bloque, el overlay de victoria aparece de inmediato (sin esperar el fin de la animación).
-- [ ] Con `Esc` en pausa, las explosiones en curso se congelan; al reanudar, continúan desde donde quedaron.
-- [ ] Varias explosiones pueden mostrarse a la vez si se rompen bloques en frames consecutivos.
-- [ ] Al reiniciar con `R` (victoria o game over), no quedan explosiones activas de la partida anterior.
-- [ ] `assets/spritesheet.js` no se modifica.
-- [ ] No se reproduce sonido al romper bloques.
+- [x] El juego carga sin errores en consola con el nuevo módulo `js/explosions.js`.
+- [x] Al destruir un bloque, desaparece de inmediato (sin colisión ni render del bloque).
+- [x] Al destruir un bloque, aparece una animación de explosión en la misma posición y tamaño del bloque.
+- [x] El color de la explosión coincide con el color del bloque destruido (usa `EXPLOSION_FRAMES[color]`).
+- [x] La animación muestra 4 frames en ~150 ms (`EXPLOSION_DURATION`) y luego desaparece.
+- [x] Cada bloque destruido sigue sumando 10 puntos en el mismo frame del impacto.
+- [x] Al destruir el último bloque, el overlay de victoria aparece de inmediato (sin esperar el fin de la animación).
+- [x] Con `Esc` en pausa, las explosiones en curso se congelan; al reanudar, continúan desde donde quedaron.
+- [x] Varias explosiones pueden mostrarse a la vez si se rompen bloques en frames consecutivos.
+- [x] Al reiniciar con `R` (victoria o game over), no quedan explosiones activas de la partida anterior.
+- [x] `assets/spritesheet.js` no se modifica.
+- [x] No se reproduce sonido al romper bloques.
 
 ## Decisiones
 
