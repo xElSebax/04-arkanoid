@@ -1,6 +1,6 @@
 # SPEC 03 — Niveles, progresión y sonidos
 
-> **Estado:** Aprobado
+> **Estado:** Implementado
 > **Depende de:** SPEC 01, SPEC 02
 > **Fecha:** 2026-07-27
 > **Objetivo:** Añadir 5 niveles con patrones de bloques distintos y velocidad de pelota progresiva (+10% por nivel), transición automática entre niveles con selector en pausa, y sonidos de rebote y rotura usando los MP3 existentes.
@@ -147,23 +147,23 @@ const LEVEL_SPEED_BONUS = 0.1;
 
 ## Criterios de aceptación
 
-- [ ] El juego carga sin errores en consola con `js/levels.js` y `js/audio.js` registrados en `index.html`.
-- [ ] Existen exactamente 5 niveles predefinidos en `js/levels.js`; el nivel 1 es la grilla completa 6×13 actual.
-- [ ] Cada nivel tiene un patrón de bloques distinto (al menos un hueco en niveles 2–5).
-- [ ] El HUD muestra el número de nivel actual (1–5).
-- [ ] Al destruir todos los bloques del nivel 1–4, tras ~1 s se carga el siguiente nivel automáticamente.
-- [ ] Al cargar un nuevo nivel, la pelota vuelve a la paleta (`attached: true`) y `phase` es `'ready'`.
-- [ ] Las vidas y el puntaje se mantienen al pasar de un nivel al siguiente.
-- [ ] Al destruir todos los bloques del nivel 5 aparece el overlay de victoria (no antes).
-- [ ] La velocidad al lanzar en nivel N es `BALL_SPEED × (1 + 0.1 × (N − 1))` (verificable: nivel 5 notablemente más rápido que nivel 1).
-- [ ] Con `Esc` en pausa, las teclas 1–5 cargan el nivel correspondiente al instante.
-- [ ] El overlay de pausa indica que se puede elegir nivel con teclas 1–5.
-- [ ] `R` en victoria o game over reinicia partida completa en nivel 1 (3 vidas, puntaje 0).
-- [ ] Se reproduce `ball-bounce.mp3` al rebotar la pelota en paredes o paleta.
-- [ ] Se reproduce `break-sound.mp3` al destruir un bloque.
-- [ ] No hay controles de mute ni volumen en esta versión.
-- [ ] `assets/spritesheet.js` no se modifica.
-- [ ] Las explosiones (SPEC 02) siguen funcionando al romper bloques.
+- [x] El juego carga sin errores en consola con `js/levels.js` y `js/audio.js` registrados en `index.html`.
+- [x] Existen exactamente 5 niveles predefinidos en `js/levels.js`; el nivel 1 es la grilla completa 6×13 actual.
+- [x] Cada nivel tiene un patrón de bloques distinto (al menos un hueco en niveles 2–5).
+- [x] El HUD muestra el número de nivel actual (1–5).
+- [x] Al destruir todos los bloques del nivel 1–4, tras ~1 s se carga el siguiente nivel automáticamente.
+- [x] Al cargar un nuevo nivel, la pelota vuelve a la paleta (`attached: true`) y `phase` es `'ready'`.
+- [x] Las vidas y el puntaje se mantienen al pasar de un nivel al siguiente.
+- [x] Al destruir todos los bloques del nivel 5 aparece el overlay de victoria (no antes).
+- [x] La velocidad al lanzar en nivel N es `BALL_SPEED × (1 + 0.1 × (N − 1))` (verificable: nivel 5 notablemente más rápido que nivel 1).
+- [x] Con `Esc` en pausa, las teclas 1–5 cargan el nivel correspondiente al instante.
+- [x] El overlay de pausa indica que se puede elegir nivel con teclas 1–5.
+- [x] `R` en victoria o game over reinicia partida completa en nivel 1 (3 vidas, puntaje 0).
+- [x] Se reproduce `ball-bounce.mp3` al rebotar la pelota en paredes o paleta.
+- [x] Se reproduce `break-sound.mp3` al destruir un bloque.
+- [x] No hay controles de mute ni volumen en esta versión.
+- [x] `assets/spritesheet.js` no se modifica.
+- [x] Las explosiones (SPEC 02) siguen funcionando al romper bloques.
 
 ## Decisiones
 
