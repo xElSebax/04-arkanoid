@@ -32,6 +32,18 @@ function initInput( canvas ) {
       e.preventDefault();
       launchBall();
     }
+    if ( e.key === 'Escape' && !e.repeat ) {
+      if ( state.phase === 'playing' ) {
+        state.phase = 'paused';
+      } else if ( state.phase === 'paused' ) {
+        state.phase = 'playing';
+      }
+    }
+    if ( ( e.key === 'r' || e.key === 'R' ) && !e.repeat ) {
+      if ( state.phase === 'victory' || state.phase === 'gameOver' ) {
+        resetGame();
+      }
+    }
   } );
 
   window.addEventListener( 'keyup', ( e ) => {
@@ -41,6 +53,8 @@ function initInput( canvas ) {
 }
 
 function updateInput() {
+  if ( state.phase !== 'ready' && state.phase !== 'playing' ) return;
+
   const { paddle } = state;
 
   if ( mouseOnCanvas && mouseX !== null ) {

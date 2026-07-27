@@ -59,6 +59,10 @@ function initState() {
   updateBallAttachedPosition();
 }
 
+function resetGame() {
+  initState();
+}
+
 function checkBallLost() {
   const { ball } = state;
   if ( ball.attached || state.phase !== 'playing' ) return;
