@@ -13,6 +13,7 @@ const state = {
     attached: true,
   },
   blocks: [],
+  explosions: [],
 };
 
 function updateBallAttachedPosition() {
@@ -44,6 +45,7 @@ function initState() {
   state.phase = 'ready';
   state.score = 0;
   state.lives = LIVES_START;
+  state.explosions = [];
   generateBlocks();
 
   state.paddle.x = ( CANVAS_WIDTH - PADDLE_W ) / 2;
