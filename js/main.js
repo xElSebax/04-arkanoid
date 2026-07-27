@@ -5,6 +5,8 @@ function gameLoop() {
   updateInput();
   updateBall();
   checkCollisions();
+  checkVictory();
+  checkBallLost();
   render( ctx, state );
   requestAnimationFrame( gameLoop );
 }

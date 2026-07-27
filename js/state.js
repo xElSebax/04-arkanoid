@@ -21,6 +21,25 @@ function updateBallAttachedPosition() {
   ball.y = paddle.y - ball.h;
 }
 
+function resetBallOnPaddle() {
+  const { ball } = state;
+  ball.vx = 0;
+  ball.vy = 0;
+  ball.attached = true;
+  updateBallAttachedPosition();
+}
+
+function checkVictory() {
+  if ( state.phase !== 'playing' ) return;
+
+  const anyAlive = state.blocks.some( ( block ) => block.alive );
+  if ( !anyAlive ) {
+    state.phase = 'victory';
+    state.ball.vx = 0;
+    state.ball.vy = 0;
+  }
+}
+
 function initState() {
   state.phase = 'ready';
   state.score = 0;
@@ -38,4 +57,20 @@ function initState() {
   state.ball.vy = 0;
   state.ball.attached = true;
   updateBallAttachedPosition();
+}
+
+function checkBallLost() {
+  const { ball } = state;
+  if ( ball.attached || state.phase !== 'playing' ) return;
+  if ( ball.y <= CANVAS_HEIGHT ) return;
+
+  state.lives -= 1;
+
+  if ( state.lives > 0 ) {
+    resetBallOnPaddle();
+  } else {
+    state.phase = 'gameOver';
+    ball.vx = 0;
+    ball.vy = 0;
+  }
 }
