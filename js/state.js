@@ -1,5 +1,7 @@
 const state = {
   phase: 'ready',
+  level: 1,
+  transitionRemainingMs: 0,
   score: 0,
   lives: LIVES_START,
   paddle: { x: 0, y: 0, w: PADDLE_W, h: PADDLE_H },
@@ -42,11 +44,8 @@ function checkVictory() {
 }
 
 function initState() {
-  state.phase = 'ready';
   state.score = 0;
   state.lives = LIVES_START;
-  state.explosions = [];
-  generateBlocks();
 
   state.paddle.x = ( CANVAS_WIDTH - PADDLE_W ) / 2;
   state.paddle.y = CANVAS_HEIGHT - PADDLE_H - PADDLE_BOTTOM_MARGIN;
@@ -55,10 +54,8 @@ function initState() {
 
   state.ball.w = BALL_SIZE;
   state.ball.h = BALL_SIZE;
-  state.ball.vx = 0;
-  state.ball.vy = 0;
-  state.ball.attached = true;
-  updateBallAttachedPosition();
+
+  loadLevel( 1 );
 }
 
 function resetGame() {
