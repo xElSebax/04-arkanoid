@@ -23,6 +23,8 @@ function render( ctx, state ) {
     drawSprite( ctx, 'block_' + block.color, block.x, block.y, block.w, block.h );
   }
 
+  renderExplosions( ctx );
+
   const { paddle, ball } = state;
   drawSprite( ctx, 'paddle', paddle.x, paddle.y, paddle.w, paddle.h );
   drawSprite( ctx, 'ball', ball.x, ball.y, ball.w, ball.h );
