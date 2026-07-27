@@ -35,6 +35,9 @@ function render( ctx, state ) {
   ctx.fillStyle = '#fff';
   ctx.font = '16px sans-serif';
   ctx.fillText( 'Puntos: ' + state.score, 16, 24 );
+  ctx.textAlign = 'right';
+  ctx.fillText( 'Nivel: ' + state.level, CANVAS_WIDTH - 16, 24 );
+  ctx.textAlign = 'left';
 
   const livesLabel = 'Vidas: ';
   ctx.fillText( livesLabel, 16, 44 );
