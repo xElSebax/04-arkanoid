@@ -21,9 +21,17 @@ function initInput( canvas ) {
     mouseOnCanvas = false;
   } );
 
+  canvas.addEventListener( 'click', () => {
+    launchBall();
+  } );
+
   window.addEventListener( 'keydown', ( e ) => {
     if ( e.key === 'ArrowLeft' ) keys.left = true;
     if ( e.key === 'ArrowRight' ) keys.right = true;
+    if ( e.key === ' ' ) {
+      e.preventDefault();
+      launchBall();
+    }
   } );
 
   window.addEventListener( 'keyup', ( e ) => {
