@@ -30,7 +30,17 @@ function render( ctx, state ) {
   ctx.fillStyle = '#fff';
   ctx.font = '16px sans-serif';
   ctx.fillText( 'Puntos: ' + state.score, 16, 24 );
-  ctx.fillText( 'Vidas: ' + state.lives, 16, 44 );
+
+  const livesLabel = 'Vidas: ';
+  ctx.fillText( livesLabel, 16, 44 );
+  const livesIconSize = 14;
+  const livesGap = 4;
+  let livesX = 16 + ctx.measureText( livesLabel ).width;
+  const livesY = 44 - livesIconSize + 2;
+  for ( let i = 0; i < state.lives; i++ ) {
+    drawSprite( ctx, 'ball', livesX, livesY, livesIconSize, livesIconSize );
+    livesX += livesIconSize + livesGap;
+  }
 
   if ( state.phase === 'paused' ) {
     drawOverlay( ctx, 'Pausa', 'Pulsa Esc para continuar' );
