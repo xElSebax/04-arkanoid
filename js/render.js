@@ -3,7 +3,7 @@ function clearCanvas( ctx ) {
   ctx.fillRect( 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT );
 }
 
-function drawOverlay( ctx, title, subtitle ) {
+function drawOverlay( ctx, title, subtitle, extraLine ) {
   ctx.fillStyle = 'rgba( 0, 0, 0, 0.65 )';
   ctx.fillRect( 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT );
   ctx.fillStyle = '#fff';
@@ -12,6 +12,9 @@ function drawOverlay( ctx, title, subtitle ) {
   ctx.fillText( title, CANVAS_WIDTH / 2, CANVAS_HEIGHT / 2 - 16 );
   ctx.font = '18px sans-serif';
   ctx.fillText( subtitle, CANVAS_WIDTH / 2, CANVAS_HEIGHT / 2 + 20 );
+  if ( extraLine ) {
+    ctx.fillText( extraLine, CANVAS_WIDTH / 2, CANVAS_HEIGHT / 2 + 44 );
+  }
   ctx.textAlign = 'left';
 }
 
@@ -45,7 +48,7 @@ function render( ctx, state ) {
   }
 
   if ( state.phase === 'paused' ) {
-    drawOverlay( ctx, 'Pausa', 'Pulsa Esc para continuar' );
+    drawOverlay( ctx, 'Pausa', 'Pulsa Esc para continuar', 'Teclas 1–5: elegir nivel' );
   } else if ( state.phase === 'victory' ) {
     drawOverlay( ctx, '¡Victoria!', 'Pulsa R para reiniciar' );
   } else if ( state.phase === 'gameOver' ) {

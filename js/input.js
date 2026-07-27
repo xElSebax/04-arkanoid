@@ -39,6 +39,12 @@ function initInput( canvas ) {
         state.phase = 'playing';
       }
     }
+    if ( state.phase === 'paused' && !e.repeat ) {
+      const level = parseInt( e.key, 10 );
+      if ( level >= 1 && level <= LEVEL_COUNT ) {
+        loadLevel( level );
+      }
+    }
     if ( ( e.key === 'r' || e.key === 'R' ) && !e.repeat ) {
       if ( state.phase === 'victory' || state.phase === 'gameOver' ) {
         resetGame();
