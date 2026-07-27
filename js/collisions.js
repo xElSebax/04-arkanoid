@@ -49,6 +49,7 @@ function checkBlockCollisions() {
     if ( !rectsOverlap( ball, block ) ) continue;
 
     block.alive = false;
+    spawnExplosion( block );
     state.score += SCORE_PER_BLOCK;
     resolveBallBlockCollision( ball, block );
     break;
