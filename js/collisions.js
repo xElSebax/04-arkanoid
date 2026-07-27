@@ -18,6 +18,7 @@ function checkPaddleCollision() {
   const angle = hitOffset * 2 * maxAngle;
   ball.vx = speed * Math.sin( angle );
   ball.vy = -speed * Math.cos( angle );
+  playBounce();
 }
 
 function resolveBallBlockCollision( ball, block ) {
@@ -52,6 +53,7 @@ function checkBlockCollisions() {
     block.alive = false;
     spawnExplosion( block );
     state.score += SCORE_PER_BLOCK;
+    playBreak();
     resolveBallBlockCollision( ball, block );
     break;
   }

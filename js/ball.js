@@ -24,13 +24,16 @@ function updateBall() {
   if ( ball.x <= 0 ) {
     ball.x = 0;
     ball.vx = -ball.vx;
+    playBounce();
   }
   if ( ball.x + ball.w >= CANVAS_WIDTH ) {
     ball.x = CANVAS_WIDTH - ball.w;
     ball.vx = -ball.vx;
+    playBounce();
   }
   if ( ball.y <= 0 ) {
     ball.y = 0;
     ball.vy = -ball.vy;
+    playBounce();
   }
 }
