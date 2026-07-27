@@ -1,0 +1,25 @@
+---
+description: Contexto y convenciones del proyecto Arkanoid
+alwaysApply: true
+---
+
+# Proyecto Arkanoid
+
+Lee `AGENTS.md` al inicio de cada tarea para contexto completo.
+
+## Resumen
+
+- Juego Arkanoid en HTML/CSS/JS vanilla, **sin dependencias**.
+- El juego **aún no está implementado**; reutilizar `assets/spritesheet.js` y assets en `assets/`.
+- Ejecutar con servidor local (`npx serve .`) y verificar en consola del navegador.
+
+## Workflow
+
+- Features grandes → spec en `specs/` con skill `spec`, luego implementar con `spec-impl` solo si está **Approved**.
+- Cambios pequeños y acotados → implementar directo sin spec.
+
+## No hacer
+
+- Agregar frameworks, bundlers o dependencias npm al juego.
+- Duplicar coordenadas de sprites fuera de `spritesheet.js`.
+- Expandir scope más allá de lo pedido o de lo que dice la spec activa.

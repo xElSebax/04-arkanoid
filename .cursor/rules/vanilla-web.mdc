@@ -1,0 +1,39 @@
+---
+description: Convenciones para HTML, CSS y JavaScript del juego
+globs: "**/*.{html,css,js}"
+alwaysApply: false
+---
+
+# Vanilla web — Arkanoid
+
+## Stack
+
+HTML semántico mínimo, CSS en `css/`, JS modular en `js/`. Canvas 2D para el juego. Sin TypeScript ni preprocessors.
+
+## JavaScript
+
+Seguir el estilo de `assets/spritesheet.js`:
+
+```js
+// ✅ Estilo del proyecto
+function updateBall( dt ) {
+  if ( !state.running ) return;
+  ball.x += ball.vx * dt;
+}
+
+// ❌ Evitar
+const updateBall = (dt) => { ... }  // arrow como función principal del módulo
+```
+
+- Estado del juego en un objeto `state` central; evitar globals sueltos.
+- Game loop con `requestAnimationFrame`; calcular `dt` para movimiento frame-independent cuando aplique.
+- Cargar sprites con `loadSpritesheet()` antes de dibujar.
+
+## HTML/CSS
+
+- Un `<canvas>` para el juego; controles de teclado (flechas / A-D) documentados en UI o README.
+- CSS simple: layout centrado, tipografía legible, sin frameworks.
+
+## Audio
+
+Usar los MP3 en `assets/sounds/`. Precargar y reproducir con `Audio` o `AudioContext`; no agregar librerías de audio.
