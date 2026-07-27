@@ -32,8 +32,16 @@ function gameLoop( now ) {
   requestAnimationFrame( gameLoop );
 }
 
-loadSpritesheet( () => {
+let assetsReady = 0;
+
+function onAssetsReady() {
+  assetsReady += 1;
+  if ( assetsReady < 2 ) return;
+
   initState();
   initInput( canvas );
   gameLoop();
-} );
+}
+
+loadSpritesheet( onAssetsReady );
+initAudio( onAssetsReady );
