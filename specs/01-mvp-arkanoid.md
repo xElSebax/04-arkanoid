@@ -1,6 +1,6 @@
 # SPEC 01 — MVP jugable de Arkanoid
 
-> **Estado:** Aprobado
+> **Estado:** Implementado
 > **Depende de:** —
 > **Fecha:** 2026-07-27
 > **Objetivo:** Implementar un Arkanoid de un solo nivel, jugable con mouse y teclado, con vidas, puntuación y overlays de victoria y game over.
@@ -106,23 +106,23 @@ Convenciones:
 
 ## Criterios de aceptación
 
-- [ ] El juego carga en el navegador con servidor local sin errores en la consola.
-- [ ] El canvas mide 800×600 px y está centrado en la página.
-- [ ] La paleta se mueve con el mouse (eje X) y con las flechas izquierda/derecha.
-- [ ] La pelota inicia pegada a la paleta; se lanza con clic o barra espaciadora.
-- [ ] La pelota rebota en las paredes laterales, la superior, la paleta y los bloques.
-- [ ] El ángulo de rebote en la paleta varía según el punto de impacto.
-- [ ] Hay exactamente 78 bloques (6 filas × 13 columnas) con un color distinto por fila.
-- [ ] Cada bloque se destruye con un solo golpe y desaparece del juego.
-- [ ] Cada bloque destruido suma 10 puntos; el puntaje se muestra en pantalla.
-- [ ] Al perder la pelota se resta una vida; con vidas restantes la pelota vuelve a la paleta para relanzar.
-- [ ] La partida empieza con 3 vidas.
-- [ ] Al agotar las 3 vidas aparece un overlay de game over.
-- [ ] Al destruir todos los bloques aparece un overlay de victoria.
-- [ ] La tecla Esc pausa y reanuda el juego.
-- [ ] La tecla R reinicia la partida desde los overlays de victoria o game over.
-- [ ] No hay sonidos ni animaciones de explosión en esta versión.
-- [ ] Los sprites se dibujan vía `assets/spritesheet.js` (sin duplicar coordenadas en otros archivos).
+- [x] El juego carga en el navegador con servidor local sin errores en la consola.
+- [x] El canvas mide 800×600 px y está centrado en la página.
+- [x] La paleta se mueve con el mouse (eje X) y con las flechas izquierda/derecha.
+- [x] La pelota inicia pegada a la paleta; se lanza con clic o barra espaciadora.
+- [x] La pelota rebota en las paredes laterales, la superior, la paleta y los bloques.
+- [x] El ángulo de rebote en la paleta varía según el punto de impacto.
+- [x] Hay exactamente 78 bloques (6 filas × 13 columnas) con un color distinto por fila.
+- [x] Cada bloque se destruye con un solo golpe y desaparece del juego.
+- [x] Cada bloque destruido suma 10 puntos; el puntaje se muestra en pantalla.
+- [x] Al perder la pelota se resta una vida; con vidas restantes la pelota vuelve a la paleta para relanzar.
+- [x] La partida empieza con 3 vidas.
+- [x] Al agotar las 3 vidas aparece un overlay de game over.
+- [x] Al destruir todos los bloques aparece un overlay de victoria.
+- [x] La tecla Esc pausa y reanuda el juego.
+- [x] La tecla R reinicia la partida desde los overlays de victoria o game over.
+- [x] No hay sonidos ni animaciones de explosión en esta versión.
+- [x] Los sprites se dibujan vía `assets/spritesheet.js` (sin duplicar coordenadas en otros archivos).
 
 
 
