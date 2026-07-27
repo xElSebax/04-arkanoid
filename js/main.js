@@ -5,6 +5,7 @@ let lastFrameTime = performance.now();
 
 function updateLevelTransition( dt ) {
   if ( state.transitionRemainingMs <= 0 ) return;
+  if ( state.phase === 'victory' || state.phase === 'gameOver' ) return;
 
   state.transitionRemainingMs -= dt;
   if ( state.transitionRemainingMs <= 0 ) {

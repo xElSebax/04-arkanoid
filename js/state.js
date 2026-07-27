@@ -45,6 +45,7 @@ function checkVictory() {
   if ( state.level < LEVEL_COUNT ) {
     state.transitionRemainingMs = LEVEL_TRANSITION_MS;
   } else {
+    state.transitionRemainingMs = 0;
     state.phase = 'victory';
   }
 }
@@ -52,6 +53,7 @@ function checkVictory() {
 function initState() {
   state.score = 0;
   state.lives = LIVES_START;
+  state.transitionRemainingMs = 0;
 
   state.paddle.x = ( CANVAS_WIDTH - PADDLE_W ) / 2;
   state.paddle.y = CANVAS_HEIGHT - PADDLE_H - PADDLE_BOTTOM_MARGIN;
