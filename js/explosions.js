@@ -10,6 +10,13 @@ function spawnExplosion( block ) {
 }
 
 function updateExplosions( dt ) {
+  for ( const explosion of state.explosions ) {
+    explosion.elapsedMs += dt;
+  }
+
+  state.explosions = state.explosions.filter(
+    ( explosion ) => explosion.elapsedMs < EXPLOSION_DURATION
+  );
 }
 
 function renderExplosions( ctx ) {
