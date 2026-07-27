@@ -5,7 +5,7 @@ function launchBall() {
 
   ball.attached = false;
   ball.vx = 0;
-  ball.vy = -BALL_SPEED;
+  ball.vy = -getBallSpeedForLevel( state.level );
 
   if ( state.phase === 'ready' ) {
     state.phase = 'playing';

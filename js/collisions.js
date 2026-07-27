@@ -12,11 +12,12 @@ function checkPaddleCollision() {
 
   ball.y = paddle.y - ball.h;
 
+  const speed = getBallSpeedForLevel( state.level );
   const hitOffset = ( ( ball.x + ball.w / 2 ) - paddle.x ) / paddle.w - 0.5;
   const maxAngle = Math.PI / 3;
   const angle = hitOffset * 2 * maxAngle;
-  ball.vx = BALL_SPEED * Math.sin( angle );
-  ball.vy = -BALL_SPEED * Math.cos( angle );
+  ball.vx = speed * Math.sin( angle );
+  ball.vy = -speed * Math.cos( angle );
 }
 
 function resolveBallBlockCollision( ball, block ) {
